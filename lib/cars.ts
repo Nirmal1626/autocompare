@@ -402,7 +402,7 @@ export function carsByBrand(brand?: string) {
 }
 
 export function categoryImage(category: Category) {
-  if (category === 'SUV') return '/cat-suv.jpg';
-  if (category === 'Sedan') return '/cat-sedan.jpg';
-  return '/cat-hatch.jpg';
+  if (category === 'SUV') return '/car-photos/mahindra-xuv700.jpg';
+  if (category === 'Sedan') return '/car-photos/honda-city.jpg';
+  return '/car-photos/maruti-swift.jpg';
 }

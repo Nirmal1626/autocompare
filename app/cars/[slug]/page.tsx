@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import { Fuel, Gauge, Settings2, Users } from 'lucide-react';
 import { ComparisonTable } from '@/components/comparison-table';
 import { OfferCard } from '@/components/offer-card';
-import { cars, categoryImage, getCar, startingPrice } from '@/lib/cars';
+import { cars, getCar, startingPrice } from '@/lib/cars';
+import { carImage, photoCredits } from '@/lib/photos';
 import { dealerships, getDealership } from '@/lib/dealerships';
 import { inr, lakhLabel } from '@/lib/format';
 import { budgets, locationName, locations } from '@/lib/locations';
@@ -52,14 +53,22 @@ export default function CarPage({
   return (
     <div>
       <section className="relative overflow-hidden bg-navy text-white">
-        <img src={categoryImage(car.category)} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0" style={{ background: `${car.paint}88` }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#120814] via-[#2a0d28]/80 to-[#120814]/25" />
+        <img src={carImage(car.slug)} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#120814] via-[#120814]/80 to-[#ff2e97]/15" />
         <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">{car.brand} · {car.category} · Illustrative image</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">{car.brand} · {car.category}</p>
             <h1 className="mt-3 text-4xl font-semibold md:text-5xl">{car.name}</h1>
             <p className="mt-4 max-w-xl text-white/80">{car.summary}</p>
+            {photoCredits[car.slug] && (
+              <p className="mt-3 max-w-xl text-xs leading-5 text-white/60">
+                Photograph by {photoCredits[car.slug].author}, {photoCredits[car.slug].license}, via{' '}
+                <a className="underline decoration-white/30" href={photoCredits[car.slug].href} target="_blank" rel="noreferrer">
+                  Wikimedia Commons
+                </a>
+                . A dusk colour grade was added for this site.
+              </p>
+            )}
             <p className="mt-6 text-sm text-white/70">Starting illustrative price</p>
             <p className="text-3xl font-semibold">{inr(startingPrice(car))}</p>
           </div>

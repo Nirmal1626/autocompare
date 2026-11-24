@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Clock, MapPin, Phone } from 'lucide-react';
-import { cars, categoryImage, startingPrice } from '@/lib/cars';
+import { cars, startingPrice } from '@/lib/cars';
+import { carImage } from '@/lib/photos';
 import { dealerships, getDealership } from '@/lib/dealerships';
 import { inr } from '@/lib/format';
 import { locationName } from '@/lib/locations';
@@ -65,10 +66,10 @@ export default function DealershipPage({ params }: { params: { slug: string } })
             if (!lead) return null;
             return (
               <article key={car.slug} className="overflow-hidden rounded-3xl border border-line bg-white shadow-card">
-                <div className="relative h-36">
-                  <img src={categoryImage(car.category)} alt="" className="h-full w-full object-cover" />
-                  <div className="absolute inset-0" style={{ background: `${car.paint}66` }} />
-                  <p className="absolute bottom-3 left-3 text-xs font-medium text-white">Illustrative image</p>
+                <div className="relative h-40">
+                  <img src={carImage(car.slug)} alt={car.name} className="h-full w-full object-cover" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#ff2e97]/30 via-transparent to-[#3ef0e0]/20" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#120814]/70 to-transparent" />
                 </div>
                 <div className="p-5">
                   <p className="text-xs font-semibold uppercase tracking-wide text-navy/50">{car.brand} · {car.category}</p>
