@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f4f7fb;
+  color: #14233c;
+}
+
+::selection {
+  background: #c9ddff;
+}
+
+.field {
+  @apply flex flex-col gap-1.5 text-sm font-medium text-navy;
+}
+
+.field select,
+.field input {
+  @apply h-12 rounded-xl border border-line bg-white px-3 text-base font-normal text-navy outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15;
+}
+
+.btn {
+  @apply inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-sm font-semibold transition;
+}
+
+.btn-primary {
+  @apply btn bg-accent text-white hover:bg-accent-dark;
+}
+
+.btn-ghost {
+  @apply btn border border-line bg-white text-navy hover:border-navy/30;
+}
