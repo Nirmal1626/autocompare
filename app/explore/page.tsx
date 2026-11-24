@@ -44,7 +44,7 @@ export default function ExplorePage({
 
 function Filter({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
   return (
-    <Link href={href} className={`rounded-full px-3 py-1.5 text-sm font-medium ${active ? 'bg-navy text-white' : 'bg-white text-navy ring-1 ring-line'}`}>
+    <Link href={href} className={`rounded-full px-3 py-1.5 text-sm font-medium ${active ? 'bg-accent text-white' : 'bg-white text-navy ring-1 ring-line'}`}>
       {children}
     </Link>
   );

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 border-t border-line bg-navy text-white">
+    <footer className="mt-20 border-t border-accent/40 bg-navy text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="text-lg font-semibold">AutoCompare</p>

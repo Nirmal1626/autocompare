@@ -5,13 +5,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: { DEFAULT: '#0E1C36', soft: '#17315C' },
-        mist: '#F4F7FB',
-        line: '#E3E8F0',
-        accent: { DEFAULT: '#1C6AE4', dark: '#124EAB' },
+        navy: { DEFAULT: '#160816', soft: '#2A1024' },
+        mist: '#2A142C',
+        line: '#6A3058',
+        accent: { DEFAULT: '#FF2E97', dark: '#D4146E' },
       },
       boxShadow: {
-        card: '0 16px 40px rgba(14, 28, 54, 0.08)',
+        card: '0 18px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 70, 160, 0.16)',
       },
       fontFamily: {
         sans: ['var(--font-outfit)', 'Segoe UI', 'sans-serif'],

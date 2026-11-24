@@ -12,8 +12,8 @@ export default function HomePage() {
   return (
     <div>
       <section className="relative overflow-hidden bg-navy text-white">
-        <img src="/hero-road.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40" />
+        <img src="/vice-night.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#120814] via-[#120814]/70 to-[#120814]/15" />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Delhi NCR · Demo prototype</p>

@@ -54,7 +54,7 @@ export default function CarPage({
       <section className="relative overflow-hidden bg-navy text-white">
         <img src={categoryImage(car.category)} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
         <div className="absolute inset-0" style={{ background: `${car.paint}88` }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#120814] via-[#2a0d28]/80 to-[#120814]/25" />
         <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">{car.brand} · {car.category} · Illustrative image</p>
@@ -136,7 +136,7 @@ export default function CarPage({
 
           <div className="mt-4 flex flex-wrap gap-2">
             {locations.map((item) => (
-              <Link key={item.id} href={href({ location: item.id })} className={`rounded-full px-3 py-1.5 text-sm font-medium ${location === item.id ? 'bg-navy text-white' : 'bg-white text-navy ring-1 ring-line'}`}>
+              <Link key={item.id} href={href({ location: item.id })} className={`rounded-full px-3 py-1.5 text-sm font-medium ${location === item.id ? 'bg-accent text-white' : 'bg-white text-navy ring-1 ring-line'}`}>
                 {item.name}
               </Link>
             ))}

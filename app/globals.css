@@ -3,25 +3,102 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
+  --ink: #f7f1ff;
 }
 
 body {
-  background: #f4f7fb;
-  color: #14233c;
+  min-height: 100vh;
+  background: #100814;
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), var(--font-outfit), sans-serif;
+  letter-spacing: 0.01em;
 }
 
 ::selection {
-  background: #c9ddff;
+  background: #ff2e97;
+  color: white;
+}
+
+.text-navy,
+.hover\:text-navy:hover {
+  color: var(--ink);
+}
+
+.text-navy\/80 { color: rgb(247 241 255 / 0.8); }
+.text-navy\/75 { color: rgb(247 241 255 / 0.75); }
+.text-navy\/70 { color: rgb(247 241 255 / 0.7); }
+.text-navy\/60 { color: rgb(247 241 255 / 0.62); }
+.text-navy\/50 { color: rgb(247 241 255 / 0.52); }
+.text-navy\/45 { color: rgb(247 241 255 / 0.48); }
+.text-navy\/40 { color: rgb(247 241 255 / 0.42); }
+
+.bg-white {
+  background-color: rgb(22 8 30 / 0.72);
+  backdrop-filter: blur(16px);
+}
+
+.bg-white\/90 {
+  background-color: rgb(14 6 22 / 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.bg-white\/10 {
+  background-color: rgb(255 255 255 / 0.08);
+}
+
+.bg-navy {
+  background-color: #160816;
+  background-image: linear-gradient(160deg, rgba(255, 46, 151, 0.22), rgba(22, 8, 22, 0.15) 46%, rgba(45, 230, 220, 0.1));
+  box-shadow: inset 0 0 0 1px rgba(255, 70, 160, 0.22);
+}
+
+.bg-emerald-50 {
+  background-color: rgb(45 230 210 / 0.12);
+}
+
+.text-emerald-800 {
+  color: #8dfff0;
+}
+
+.border-emerald-600 {
+  border-color: #3ef0e0;
+}
+
+.bg-amber-50 {
+  background-color: rgb(255 122 60 / 0.14);
+}
+
+.border-amber-200 {
+  border-color: rgb(255 160 80 / 0.45);
+}
+
+.text-red-700 {
+  color: #ff9b8a;
 }
 
 .field {
-  @apply flex flex-col gap-1.5 text-sm font-medium text-navy;
+  @apply flex flex-col gap-1.5 text-sm font-medium;
+  color: var(--ink);
 }
 
 .field select,
 .field input {
-  @apply h-12 rounded-xl border border-line bg-white px-3 text-base font-normal text-navy outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15;
+  @apply h-12 rounded-xl border px-3 text-base font-normal outline-none transition;
+  border-color: rgb(255 77 154 / 0.4);
+  background: rgb(10 4 16 / 0.82);
+  color: var(--ink);
+}
+
+.field select:focus,
+.field input:focus {
+  border-color: #ff2e97;
+  box-shadow: 0 0 0 4px rgb(255 46 151 / 0.18);
 }
 
 .btn {
@@ -29,9 +106,23 @@ body {
 }
 
 .btn-primary {
-  @apply btn bg-accent text-white hover:bg-accent-dark;
+  @apply btn text-white;
+  background: linear-gradient(90deg, #ff2e97, #ff7a3c);
+  box-shadow: 0 0 22px rgb(255 46 151 / 0.35);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
 }
 
 .btn-ghost {
-  @apply btn border border-line bg-white text-navy hover:border-navy/30;
+  @apply btn;
+  border: 1px solid rgb(255 77 154 / 0.45);
+  background: rgb(255 255 255 / 0.04);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: #3ef0e0;
+  color: #d9fffa;
 }

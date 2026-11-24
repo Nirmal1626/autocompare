@@ -19,12 +19,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-line/80 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-navy text-sm font-semibold text-white">AC</span>
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-[#ff2e97] to-[#ff7a3c] text-sm font-semibold text-white shadow-[0_0_18px_rgba(255,46,151,0.65)]">AC</span>
           <span className="text-lg font-semibold tracking-tight text-navy">AutoCompare</span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm font-medium text-navy/80 md:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-navy">
+            <Link key={link.href} href={link.href} className="hover:text-accent">
               {link.label}
             </Link>
           ))}

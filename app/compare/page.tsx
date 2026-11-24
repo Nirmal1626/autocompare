@@ -92,7 +92,7 @@ function Results({
         </div>
         <div className="flex flex-wrap gap-2">
           {sorts.map((item) => (
-            <Link key={item.id} href={query({ sort: item.id })} className={`rounded-full px-3 py-1.5 text-sm font-medium ${sort === item.id ? 'bg-navy text-white' : 'bg-white text-navy ring-1 ring-line'}`}>
+            <Link key={item.id} href={query({ sort: item.id })} className={`rounded-full px-3 py-1.5 text-sm font-medium ${sort === item.id ? 'bg-accent text-white' : 'bg-white text-navy ring-1 ring-line'}`}>
               {item.label}
             </Link>
           ))}
